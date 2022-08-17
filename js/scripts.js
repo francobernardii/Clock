@@ -1,8 +1,3 @@
-let d = 14 // 1-30/31
-let h = 0 // 0 - 23
-let m = 0 // 0 - 59
-let s = 5 // 0 - 59
-
 function showTime(){
     let date = new Date();
     let d = date.getDate(); // 1-30/31
