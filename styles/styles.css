@@ -1,3 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@300;400;700&family=Space+Grotesk:wght@300;400;700&display=swap");
+body {
+  font-family: "Red Hat Text", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  width: 100vw;
+  height: 100vh;
+  background: rgb(32, 30, 43);
+  background-size: cover;
+  padding: 0%;
+  margin: 0;
+}
+
+.dFlex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 h1 {
-  color: red;
+  font-size: 32px;
+}
+
+.container-general {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  background: url(../assets/bg-stars.svg);
+}
+.container-general .container-titulo, .container-general .container-social-media, .container-general .container-clock {
+  width: 100%;
+  flex-grow: 1;
+  text-align: center;
+}
+.container-general .container-titulo {
+  color: hsl(0deg, 0%, 100%);
+  align-items: flex-end;
+  letter-spacing: 10px;
+  font-size: 32px;
+}
+.container-general .container-clock {
+  flex-direction: row;
+  flex-grow: 2;
+  gap: 100px;
+}
+.container-general .container-clock .card {
+  width: 237px;
+  height: 300px;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.container-general .container-clock .card .card-body {
+  width: 100%;
+  flex-grow: 5;
+  border-radius: 10px;
+  font-size: 100px;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 7px hsl(234deg, 17%, 12%);
+}
+.container-general .container-clock .card .card-body .half1, .container-general .container-clock .card .card-body .half2 {
+  overflow: hidden;
+  color: white;
+  background-color: hsl(236deg, 21%, 26%);
+}
+.container-general .container-clock .card .card-body .half1 p, .container-general .container-clock .card .card-body .half2 p {
+  margin: 0;
+  color: hsl(345deg, 95%, 68%);
+}
+.container-general .container-clock .card .card-body .half2 {
+  width: 100%;
+  height: 100%;
+}
+.container-general .container-clock .card .card-body .half2 .card-dot {
+  width: 5%;
+  height: 5%;
+  background-color: hsl(234deg, 17%, 12%);
+  z-index: 4;
+  border-radius: 50%;
+  position: absolute;
+}
+.container-general .container-clock .card .card-body .half2 .card-dot:nth-child(1) {
+  left: -5px;
+}
+.container-general .container-clock .card .card-body .half2 .card-dot:nth-child(2) {
+  right: -5px;
+}
+.container-general .container-clock .card .card-body .half2 .half1 {
+  width: 100%;
+  height: 50%;
+  filter: brightness(0.9);
+  z-index: 2;
+  position: absolute;
+  top: 0%;
+  text-align: center;
+}
+.container-general .container-clock .card .card-body .half2 .half1 p {
+  margin-top: 24%;
+}
+.container-general .container-clock .card .card-text {
+  width: 100%;
+  flex-grow: 1;
+  color: hsl(237deg, 18%, 59%);
+  margin-top: 10px;
+}
+.container-general .container-social-media {
+  background: url(../assets/pattern-hills.svg) no-repeat;
+  background-size: cover;
+  gap: 30px;
+}
+.container-general .container-social-media img {
+  cursor: pointer;
+}
+.container-general .container-social-media img:hover {
+  transition: 0.5s;
+  opacity: 0.7;
+}
+
+#half1 {
+  transform: rotateX(180deg);
+  transform-origin: 100% 100%;
+  -webkit-animation: flipClock 1s infinite;
+          animation: flipClock 1s infinite;
+}
+#half1 #HalfS {
+  -webkit-animation: displayNone 1s infinite;
+          animation: displayNone 1s infinite;
+}
+
+@media (max-width: 1280px) {
+  h1 {
+    font-size: 14px;
+  }
+  .container-general {
+    gap: 30px;
+  }
+  .container-general .container-titulo {
+    font-size: 7px;
+  }
+  .container-general .container-clock {
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .container-general .container-clock .card {
+    width: 70px;
+    height: 100px;
+  }
+  .container-general .container-clock .card .card-body {
+    font-size: 23px;
+  }
+  .container-general .container-clock .card .card-body .half2 .card-dot {
+    width: 7%;
+    height: 7%;
+    background-color: hsl(234deg, 17%, 12%);
+    z-index: 4;
+    border-radius: 50%;
+    position: absolute;
+  }
+  .container-general .container-clock .card .card-body .half2 .card-dot:nth-child(1) {
+    left: -2px;
+  }
+  .container-general .container-clock .card .card-body .half2 .card-dot:nth-child(2) {
+    right: -2px;
+  }
+}
+@-webkit-keyframes flipClock {
+  0% {
+    transform: rotateX(0deg);
+    transform-origin: 100% 100%;
+  }
+  50% {
+    filter: brightness(0.9);
+  }
+  56% {
+    transform: rotateX(180deg);
+    transform-origin: 100% 100%;
+    filter: brightness(1);
+  }
+}
+@keyframes flipClock {
+  0% {
+    transform: rotateX(0deg);
+    transform-origin: 100% 100%;
+  }
+  50% {
+    filter: brightness(0.9);
+  }
+  56% {
+    transform: rotateX(180deg);
+    transform-origin: 100% 100%;
+    filter: brightness(1);
+  }
+}
+@-webkit-keyframes displayNone {
+  0% {
+    transform: scaleX(1);
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleX(-1);
+    transform: scaleY(-1);
+  }
+}
+@keyframes displayNone {
+  0% {
+    transform: scaleX(1);
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleX(-1);
+    transform: scaleY(-1);
+  }
 }/*# sourceMappingURL=styles.css.map */

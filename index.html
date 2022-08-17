@@ -8,8 +8,72 @@
     <link rel="shortcut icon" href="assets/favicon-32x32.png" type="image/x-icon">
     <link rel="stylesheet" href="styles/styles.css">
 </head>
-<body>
-    <h1>Hola mundo</h1>
+<body class="dFlex">
+    <div class="container-general dFlex">
+        <div class="container-titulo dFlex">
+            <h1>WE'RE LAUNCHING SOON</h1>
+        </div>
+        <div class="container-clock dFlex" onload="showtime()">
+            <div class="card dFlex">
+                <div id="cardDay" class="card-body dFlex">
+                    <div class="half2 dFlex">
+                        <span class="card-dot"></span>
+                        <span class="card-dot"></span>
+                        <div class="half1">
+                            <p class="HalfD">00</p>
+                        </div>
+                        <p class="HalfD">00</p>
+                    </div>
+                </div>
+                <div class="card-text dFlex">DAYS</div>
+            </div>
+            <div class="card dFlex">
+                <div id="cardHour" class="card-body dFlex">
+                    <div class="half2 dFlex">
+                        <span class="card-dot"></span>
+                        <span class="card-dot"></span>
+                        <div class="half1">
+                            <p class="HalfH">00</p>
+                        </div>
+                        <p class="HalfH">00</p>
+                    </div>
+                </div>
+                <div class="card-text dFlex">HOUR</div>
+            </div>
+            <div class="card dFlex">
+                <div class="card-body dFlex">
+                    <div class="half2 dFlex">
+                        <span class="card-dot"></span>
+                        <span class="card-dot"></span>
+                        <div class="half1">
+                            <p class="HalfM">00</p>
+                        </div>
+                        <p class="HalfM">00</p>
+                    </div>
+                </div>
+                <div class="card-text dFlex">MINUTES</div>
+            </div>
+            <div class="card dFlex">
+                <div class="card-body dFlex">
+                    <div class="half2 dFlex">
+                        <span class="card-dot"></span>
+                        <span class="card-dot"></span>
+                        <div id="half1" class="half1">
+                            <p id="HalfS" class="HalfS">00</p>
+                        </div>
+                        <p class="HalfS">00</p>
+                    </div>
+                </div>
+                <div class="card-text dFlex">SECONDS</div>
+            </div>
+        </div>
+        <div class="container-social-media dFlex">
+            <img src="assets/icon-facebook.svg" alt="Logo Facebook">
+            <img src="assets/icon-pinterest.svg" alt="Logo Pinterest">
+            <img src="assets/icon-instagram.svg" alt="Logo Instagram">
+        </div>
+    </div>
+    
     <script src="js/scripts.js"></script>
 </body>
 </html>
