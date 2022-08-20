@@ -4,12 +4,14 @@ function showTime(){
     let h = date.getHours(); // 0 - 23
     let m = date.getMinutes(); // 0 - 59
     let s = date.getSeconds(); // 0 - 59
-
+    let bandera = false
+    console.log(h)
     d = (d < 10) ? "0" + d : d;
     h = (h < 10) ? "0" + h : h;
     m = (m < 10) ? "0" + m : m;
     s = (s < 10) ? "0" + s : s;
-    
+
+
     if(s === "00"){
         document.getElementsByClassName("half1")[2].setAttribute('style','animation: flipClock 1s infinite;transform: rotateX(180deg);transform-origin: 100% 100%;')
         document.getElementsByClassName("HalfM")[0].setAttribute('style','animation: displayNone 1s infinite;')
@@ -24,7 +26,10 @@ function showTime(){
         document.getElementsByClassName("half1")[1].removeAttribute('style')
     }
 
-    if(h === "00"){
+    h === "23" && m === "59" ? bandera = true : ""
+
+    if(h === "00" && bandera){
+        bandera = false
         document.getElementsByClassName("half1")[1].setAttribute('style','animation: flipClock 1s infinite;transform: rotateX(180deg);transform-origin: 100% 100%;')
     }else{
         document.getElementsByClassName("half1")[1].removeAttribute('style')
